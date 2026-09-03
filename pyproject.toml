@@ -1,0 +1,19 @@
+[project]
+name = "data-flow"
+version = "0.1.0"
+description = "Example data flow."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "prefect>=3.8.4",
+]
+
+[project.scripts]
+data-flow = "data_flow:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.prefect.api]
+url = "http://127.0.0.1:4200/api"
