@@ -43,3 +43,14 @@ uv run ./src/flows/02_download_orders.py
 # Simplier version
 uv run ./src/flows/03_orders_report.py
 ```
+
+
+#### Start worker:
+```
+uv run prefect worker start --pool "pool-1" --work-queue "default"
+```
+
+#### Deploy workflow:
+```
+uv run prefect deploy --name hello-world-deployment
+```

@@ -24,15 +24,17 @@ pull:
 # the deployments section allows you to provide configuration
 # for deploying flows
 deployments:
-- name: null
-  version: null
-  tags: []
-  description: null
-  schedule: {}
-  flow_name: null
-  entrypoint: null
+- name: "hello-world-deployment"
+  version: 1.0.0
+  tags: ["hello-world"]
+  description: "Example deployment for the hello-world flow"
+  schedule: 
+    cron: "* * * * *"
+  flow_name: "hello-world"
+  entrypoint: "./src/flows/01_hello_world.py:hello_world"
   parameters: {}
+  concurrency_limit: 1
   work_pool:
-    name: null
-    work_queue_name: null
+    name: "pool-1"
+    work_queue_name: "default"
     job_variables: {}
